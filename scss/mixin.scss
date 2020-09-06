@@ -1,0 +1,46 @@
+@import "variables";
+/*display flex*/
+@mixin flex-disp($justify,$alignC){
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: $justify;
+    align-content: $alignC;
+    align-items: center;
+}
+
+/*Button*/
+@mixin butt{
+    background-color: #f22f49;
+    width:$widthButtMain;
+    height:$heightButtMain;
+    border-radius: 25px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    border:none;
+    box-sizing: border-box;
+    padding:5px;
+    text-transform: uppercase;
+}
+
+/*li*/
+@mixin li($sizeLi,$transLi,$weightLi,$colorLi){
+    list-style: none;
+    text-decoration: none;
+    transition: .4s;
+    font-size: $sizeLi;
+    text-transform: $transLi;
+    font-weight:$weightLi;
+    font-style: normal;
+    color:$colorLi;
+    &:hover{
+        color:#ff4822;
+    }
+}
+
+/*position*/
+@mixin position($pos,$top,$left){
+    position:$pos;
+    top:$top;
+    left:$left;
+}

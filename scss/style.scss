@@ -1,0 +1,141 @@
+@import "variables";
+@import "mixin";
+
+body{
+    margin:0px;
+    padding:0px;
+    font-family: 'Lato', sans-serif;
+}
+
+a{ 
+      color:white !important;
+      text-decoration: none;
+      transition: .1s;
+      &:hover{
+        color:#d6d6d6 !important;
+        text-decoration: none;
+      }
+      &:active{
+        color:#fed6d6 !important;
+        text-decoration: none;
+      }
+  }      
+      
+.pr{
+    @include flex-disp(space-around,center);
+    li{
+        background-color: $backColor;
+    }
+}
+button{
+    @include butt;
+}
+.slideButt,#shopCart{
+    @include butt;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    text-align: center;
+}
+i{
+    font-size: 14px;
+    color:white;
+}
+
+/*header*/
+header{
+    background-color: #222222;
+    @include flex-disp(space-between,center);
+    padding:1% 5%;
+}
+/*quick link*/
+.quickLinks ul{
+    @include flex-disp(flex-end,center);
+    li{
+        @include li(12px,unset,600,white);
+        margin-right: 20px;
+        padding:0px 10px;
+        text-align: center;
+        &:hover{
+            color:#ff4822;
+            text-decoration: none;
+          }
+    }
+    li:not(:first-child){
+        border-left:1px solid white;
+    }
+}
+/*search form*/
+.searchSec{
+    @include flex-disp(space-around,center);
+    position:relative;
+    .search-butt{
+        background-color: $backColor;
+        width:50px;
+        border-radius:5px;
+        height:inherit;
+        @include position(absolute,0px,425px);
+    }
+    form{
+        width:100%;
+        @include position(absolute,10px,-190px);
+    }
+
+    form input{
+        width:100%;
+        border-radius:5px;
+        border:none;
+        box-sizing: border-box;
+        padding: 1%;
+    }
+    /*search media*/
+    @media (max-width:992px){
+        form{
+            width:50%;
+            @include position(absolute,10px,50px);
+        }
+        .search-butt{
+            @include position(absolute,0px,187px);
+        }
+        form input{
+            padding: 2%;
+        }
+    }
+    section:nth-child(2){
+        position : relative;
+        left:130px;
+        div{
+            color:white;
+            font-size:14px;
+            @include position(absolute,0px,50px);
+        }
+    }
+}
+ 
+
+ /*menu*/
+nav {
+    width:100%;
+    background:$backColor; 
+    box-sizing: border-box;
+    padding:1% 5%;
+    ul{
+        @include flex-disp(space-between,center);
+        @include li(15px,uppercase,400,white);
+        li:nth-child(2){
+            margin-left:15%;
+        }
+        li{
+            margin-right:30px;
+            &:hover{
+                color: #ff4822 !important;
+            }
+        }
+    }
+
+}
+
+
+
+
+
